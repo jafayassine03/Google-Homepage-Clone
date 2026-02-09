@@ -1,40 +1,57 @@
 # Google Homepage Clone
 
-This project is a clone of the Google homepage.
+This project is a **Google homepage clone** built as a step-by-step learning project.
 
-The current version focuses on **HTML structure only**, serving as a foundation for future styling and enhancements.  
-CSS and additional features will be added in upcoming updates.
-
----
-
+The current version includes a **clean HTML structure with basic CSS styling** to recreate the layout and overall feel of the Google homepage.  
+More advanced styling and JavaScript functionality will be added progressively.
 
 ---
 
-## 🧠 Current Focus
+## 🧠 Current Features
 
-- Semantic HTML structure
+- Semantic HTML5 structure
+- Header, main content, and footer layout
+- Centered logo, search bar, and action buttons
+- Basic CSS styling (layout, spacing, hover effects)
 - Clean and readable markup
-- Proper page hierarchy
-- Preparing a solid base for CSS styling
 
 ---
 
-## 🚧 Planned Updates
+## 🚧 Project Status
 
-- Add custom CSS styling
-- Make the layout responsive
-- Improve visual accuracy
-- Add dark mode
-- Add JavaScript interactions
+🟡 **In Progress**
+
+This is still an early version focused on building a solid foundation before moving to advanced features.
+
+---
+
+## 🛠️ Technologies Used
+
+- HTML5  
+- CSS3 (basic styling)
 
 ---
 
 ## 🎯 Purpose
 
-This project is part of a step-by-step approach:
-1. Build a clean HTML foundation
-2. Layer CSS for layout and design
-3. Enhance functionality progressively
+This project follows a structured learning approach:
+
+1. Build a clean and semantic HTML foundation  
+2. Add basic CSS for layout and usability  
+3. Improve visual accuracy and responsiveness  
+4. Add JavaScript for interactivity and behavior  
+
+Each update improves the project step by step.
+
+---
+
+## 🚀 Planned Updates
+
+- Improve CSS styling to better match the real Google homepage
+- Make the layout fully responsive
+- Add dark mode
+- Add JavaScript interactions (search behavior, animations)
+- Improve accessibility
 
 ---
 
@@ -43,6 +60,9 @@ This project is part of a step-by-step approach:
 This project is for **educational purposes only**  
 and is not affiliated with or endorsed by Google.
 
-License
+---
 
-Totally free to use! Play around with it and make it your own 😄
+## 📄 License
+
+Free to use, modify, and learn from.  
+Feel free to experiment and make it your own 😄

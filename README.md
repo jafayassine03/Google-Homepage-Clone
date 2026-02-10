@@ -1,68 +1,60 @@
-# Google Homepage Clone
+Google Homepage Clone
 
-This project is a **Google homepage clone** built as a step-by-step learning project.
+This project is a clone of the Google homepage, built step by step to practice front-end fundamentals and clean project structure.
 
-The current version includes a **clean HTML structure with basic CSS styling** to recreate the layout and overall feel of the Google homepage.  
-More advanced styling and JavaScript functionality will be added progressively.
+The current version includes HTML and CSS, closely matching the layout and basic styling of the original Google homepage.
+JavaScript functionality will be added in future updates.
 
----
+🚀 Current Features
 
-## 🧠 Current Features
+Semantic HTML5 structure
 
-- Semantic HTML5 structure
-- Header, main content, and footer layout
-- Centered logo, search bar, and action buttons
-- Basic CSS styling (layout, spacing, hover effects)
-- Clean and readable markup
+Custom CSS styling (layout, spacing, hover effects)
 
----
+Google-like search bar and buttons
 
-## 🚧 Project Status
+Header and footer navigation
 
-🟡 **In Progress**
+Responsive behavior for smaller screens
 
-This is still an early version focused on building a solid foundation before moving to advanced features.
+Clean and readable codebase
 
----
+🧠 Tech Stack
 
-## 🛠️ Technologies Used
+HTML5
+CSS3
+(Planned) JavaScript
+🚧 Planned Updates
 
-- HTML5  
-- CSS3 (basic styling)
+Add JavaScript functionality
 
----
+Search behavior
 
-## 🎯 Purpose
+“I’m Feeling Lucky” logic
 
-This project follows a structured learning approach:
+Keyboard interactions
 
-1. Build a clean and semantic HTML foundation  
-2. Add basic CSS for layout and usability  
-3. Improve visual accuracy and responsiveness  
-4. Add JavaScript for interactivity and behavior  
+Improve accessibility (ARIA, focus states)
 
-Each update improves the project step by step.
+Add dark mode
 
----
+Pixel-perfect UI improvements
 
-## 🚀 Planned Updates
+🎯 Purpose
 
-- Improve CSS styling to better match the real Google homepage
-- Make the layout fully responsive
-- Add dark mode
-- Add JavaScript interactions (search behavior, animations)
-- Improve accessibility
+This project is part of my learning journey in front-end web development, focusing on:
 
----
+Writing clean HTML
 
-## ⚠️ Disclaimer
+Separating concerns (HTML / CSS / JS)
 
-This project is for **educational purposes only**  
-and is not affiliated with or endorsed by Google.
+Building real-world UI clones
 
----
+📌 Notes
 
-## 📄 License
+This project is for educational purposes only and is not affiliated with Google.
 
-Free to use, modify, and learn from.  
-Feel free to experiment and make it your own 😄
+
+License
+
+Totally free to use! Play around with it and make it your own 😄

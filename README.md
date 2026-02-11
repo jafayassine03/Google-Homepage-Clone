@@ -67,3 +67,64 @@ Styled buttons and navigation
 Fixed footer layout
 
 Error feedback animation when search input is empty
+
+🎯 Purpose of This Project
+
+This project was built to practice:
+
+Writing clean and semantic HTML
+
+Separating concerns (HTML / CSS / JS)
+
+DOM manipulation
+
+Event handling
+
+LocalStorage usage
+
+Real-world UI cloning
+
+Structuring a front-end project properly
+
+📈 Learning Outcomes
+
+By building this project, I improved my understanding of:
+
+Form handling in JavaScript
+
+Preventing default browser behavior
+
+Dynamic URL construction
+
+Conditional logic
+
+Persistent browser storage
+
+Dark mode implementation
+
+Clean project architecture
+
+🚧 Possible Future Improvements
+
+Search suggestions dropdown (autocomplete)
+
+Voice search UI simulation
+
+Fake results page (without redirecting to Google)
+
+Animations for logo and buttons
+
+Mobile UI optimization
+
+Accessibility improvements (ARIA roles, focus management)
+
+Pixel-perfect UI refinements
+
+📌 Disclaimer
+
+This project is for educational purposes only.
+It is not affiliated with or endorsed by Google.
+
+License
+
+Totally free to use! Play around with it and make it your own 😄

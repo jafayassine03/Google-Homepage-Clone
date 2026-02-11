@@ -1,9 +1,10 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Google</title>
   <link rel="stylesheet" href="GoogleClone.css">
 </head>
-
 
 <body>
 
@@ -22,9 +23,10 @@
       src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" 
       alt="Google Logo">
 
-    <form action="#" method="get">
+    <form id="searchForm">
       <input 
         type="text" 
+        id="searchInput"
         name="q"
         placeholder="Search Google or type a URL"
         autofocus
@@ -32,7 +34,7 @@
 
       <div class="buttons">
         <button type="submit">Google Search</button>
-        <button type="button">I'm Feeling Lucky</button>
+        <button type="button" id="luckyBtn">I'm Feeling Lucky</button>
       </div>
     </form>
   </main>
@@ -54,6 +56,8 @@
       </ul>
     </nav>
   </footer>
+
+  <script src="Googleclone.js"></script>
 
 </body>
 </html>

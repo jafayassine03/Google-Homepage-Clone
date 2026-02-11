@@ -1,80 +1,69 @@
-Google Homepage Clone
+🌐 Google Homepage Clone
 
-This project is a clone of the Google homepage, built step by step to practice front-end fundamentals, clean structure, and basic interactivity.
+A functional clone of the Google homepage built using HTML, CSS, and Vanilla JavaScript.
 
-The current version includes HTML, CSS, and JavaScript, closely matching the layout and basic behavior of the original Google homepage.
+This project replicates the layout and basic behavior of the original Google homepage while adding enhanced interactivity and modern features.
 
-🚀 Current Features
-
-Semantic HTML5 structure
-
-Custom CSS styling (layout, spacing, hover effects)
-
-Google-like search bar and buttons
-
-Header and footer navigation
-
-Responsive behavior for smaller screens
-
-Functional search using JavaScript
-
-“I’m Feeling Lucky” redirect logic
-
-Clean and organized codebase
-
-🧠 Tech Stack
-
-HTML5
-
-CSS3
-
-JavaScript (Vanilla JS)
-
-⚙️ JavaScript Functionality
-
-Prevents default form submission
-
-Captures user input
+🚀 Live Features
+🔎 Search Functionality
 
 Redirects to real Google search results
 
-Implements “I’m Feeling Lucky” behavior
+Uses encodeURIComponent() for safe query formatting
 
-Uses encodeURIComponent() for safe URL queries
+Prevents default form reload behavior
 
-🚧 Planned Updates
+Press Enter to search
 
-Keyboard interaction improvements
+🎯 “I’m Feeling Lucky” Button
 
-Search suggestions (autocomplete)
+Redirects directly to the first Google search result
 
-Dark mode toggle
+Uses Google’s &btnI=I parameter
 
-Improved accessibility (ARIA roles, focus states)
+🌐 Smart URL Detection
 
-Pixel-perfect UI refinements
+The search bar behaves like a browser:
 
-Custom search simulation without redirecting
+Typing https://github.com → opens directly
 
-🎯 Purpose
+Typing youtube.com → automatically adds https://
 
-This project is part of my learning journey in front-end web development, focusing on:
+Typing normal text → performs a Google search
 
-Writing clean and semantic HTML
+⌨️ Keyboard Shortcut
 
-Proper CSS layout and styling
+Press / anywhere on the page to focus the search input
+(similar to real Google)
 
-Separating concerns (HTML / CSS / JS)
+💾 Search Memory
 
-Understanding DOM manipulation
+Saves the last search using localStorage
 
-Building real-world UI clones
+Automatically restores it when the page reloads
 
-📌 Notes
+🌙 Dark Mode Toggle
 
-This project is for educational purposes only and is not affiliated with Google.
+Toggle between Light and Dark mode
 
-📜 License
+Smooth transitions
 
-Totally free to use!
-Feel free to fork it, modify it, and make it your own 😄
+Theme preference saved in localStorage
+
+Automatically loads saved theme on refresh
+
+🎨 UI & Styling
+
+Clean semantic HTML5 structure
+
+Custom CSS layout
+
+Responsive behavior
+
+Hover effects
+
+Styled buttons and navigation
+
+Fixed footer layout
+
+Error feedback animation when search input is empty

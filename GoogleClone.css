@@ -2,6 +2,7 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   height: 100vh;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 header ul {
@@ -48,7 +49,6 @@ main img {
   margin-bottom: 24px;
 }
 
-
 input[type="text"] {
   width: 520px;
   padding: 12px 20px;
@@ -56,11 +56,16 @@ input[type="text"] {
   border: 1px solid #dfe1e5;
   font-size: 16px;
   outline: none;
+  transition: 0.3s ease;
 }
 
 input[type="text"]:hover,
 input[type="text"]:focus {
   box-shadow: 0 1px 6px rgba(32,33,36,.28);
+}
+
+.error {
+  border: 2px solid red;
 }
 
 .buttons {
@@ -107,4 +112,33 @@ footer a {
 
 footer a:hover {
   text-decoration: underline;
+}
+
+body.dark {
+  background-color: #202124;
+  color: #e8eaed;
+}
+
+body.dark input[type="text"] {
+  background-color: #303134;
+  color: #e8eaed;
+  border: 1px solid #5f6368;
+}
+
+body.dark footer {
+  background-color: #171717;
+}
+
+body.dark footer a {
+  color: #9aa0a6;
+}
+
+body.dark .buttons button {
+  background-color: #303134;
+  color: #e8eaed;
+  border: 1px solid #5f6368;
+}
+
+body.dark header a {
+  color: #e8eaed;
 }

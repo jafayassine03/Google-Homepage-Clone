@@ -1,9 +1,8 @@
 Google Homepage Clone
 
-This project is a clone of the Google homepage, built step by step to practice front-end fundamentals and clean project structure.
+This project is a clone of the Google homepage, built step by step to practice front-end fundamentals, clean structure, and basic interactivity.
 
-The current version includes HTML and CSS, closely matching the layout and basic styling of the original Google homepage.
-JavaScript functionality will be added in future updates.
+The current version includes HTML, CSS, and JavaScript, closely matching the layout and basic behavior of the original Google homepage.
 
 🚀 Current Features
 
@@ -17,36 +16,57 @@ Header and footer navigation
 
 Responsive behavior for smaller screens
 
-Clean and readable codebase
+Functional search using JavaScript
+
+“I’m Feeling Lucky” redirect logic
+
+Clean and organized codebase
 
 🧠 Tech Stack
 
 HTML5
+
 CSS3
-(Planned) JavaScript
+
+JavaScript (Vanilla JS)
+
+⚙️ JavaScript Functionality
+
+Prevents default form submission
+
+Captures user input
+
+Redirects to real Google search results
+
+Implements “I’m Feeling Lucky” behavior
+
+Uses encodeURIComponent() for safe URL queries
+
 🚧 Planned Updates
 
-Add JavaScript functionality
+Keyboard interaction improvements
 
-Search behavior
+Search suggestions (autocomplete)
 
-“I’m Feeling Lucky” logic
+Dark mode toggle
 
-Keyboard interactions
+Improved accessibility (ARIA roles, focus states)
 
-Improve accessibility (ARIA, focus states)
+Pixel-perfect UI refinements
 
-Add dark mode
-
-Pixel-perfect UI improvements
+Custom search simulation without redirecting
 
 🎯 Purpose
 
 This project is part of my learning journey in front-end web development, focusing on:
 
-Writing clean HTML
+Writing clean and semantic HTML
+
+Proper CSS layout and styling
 
 Separating concerns (HTML / CSS / JS)
+
+Understanding DOM manipulation
 
 Building real-world UI clones
 
@@ -54,7 +74,7 @@ Building real-world UI clones
 
 This project is for educational purposes only and is not affiliated with Google.
 
+📜 License
 
-License
-
-Totally free to use! Play around with it and make it your own 😄
+Totally free to use!
+Feel free to fork it, modify it, and make it your own 😄

@@ -24,15 +24,18 @@
       src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" 
       alt="Google Logo">
 
-    <form id="searchForm">
-      <input 
-        type="text" 
-        id="searchInput"
-        name="q"
-        placeholder="Search Google or type a URL"
-        autocomplete="off"
-        autofocus
-        aria-label="Search">
+    <form id="searchForm" autocomplete="off">
+      <div class="search-container">
+        <input 
+          type="text" 
+          id="searchInput"
+          name="q"
+          placeholder="Search Google or type a URL"
+          autofocus
+          aria-label="Search">
+        
+        <ul id="suggestions"></ul>
+      </div>
 
       <div class="buttons">
         <button type="submit">Google Search</button>
@@ -60,6 +63,5 @@
   </footer>
 
   <script src="Googleclone.js"></script>
-
 </body>
 </html>

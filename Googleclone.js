@@ -6,39 +6,43 @@ const suggestionsBox = document.getElementById("suggestions");
 
 let selectedIndex = -1;
 
-const suggestionsData = [
-  "JavaScript tutorial",
-  "HTML CSS projects",
-  "How to learn programming",
-  "Frontend developer roadmap",
-  "React vs Vue",
-  "Best laptops for coding",
-  "GitHub portfolio ideas",
-  "Dark mode CSS design",
-  "How search engines work",
-  "Web development projects"
-];
+
+function getHistory() {
+  return JSON.parse(localStorage.getItem("searchHistory")) || [];
+}
+
+function saveToHistory(query) {
+  let history = getHistory();
+
+  if (!history.includes(query)) {
+    history.unshift(query);
+  }
+
+  history = history.slice(0, 8); // limiting historry
+  localStorage.setItem("searchHistory", JSON.stringify(history));
+}
+
+function clearHistory() {
+  localStorage.removeItem("searchHistory");
+  renderSuggestions([]);
+}
 
 
-searchInput.addEventListener("input", function () {
-  const value = searchInput.value.toLowerCase();
+
+function renderSuggestions(list) {
   suggestionsBox.innerHTML = "";
   selectedIndex = -1;
 
-  if (value === "") {
+  if (list.length === 0) {
     suggestionsBox.style.display = "none";
     return;
   }
 
-  const filtered = suggestionsData.filter(item =>
-    item.toLowerCase().includes(value)
-  );
-
-  filtered.forEach((item, index) => {
+  list.forEach((item, index) => {
     const li = document.createElement("li");
     li.textContent = item;
 
-    li.addEventListener("click", function () {
+    li.addEventListener("click", () => {
       searchInput.value = item;
       suggestionsBox.style.display = "none";
       handleSearch();
@@ -47,11 +51,33 @@ searchInput.addEventListener("input", function () {
     suggestionsBox.appendChild(li);
   });
 
-  suggestionsBox.style.display = filtered.length ? "block" : "none";
+  const clearBtn = document.createElement("li");
+  clearBtn.textContent = "Clear search history";
+  clearBtn.style.fontWeight = "bold";
+  clearBtn.style.color = "red";
+  clearBtn.addEventListener("click", clearHistory);
+  suggestionsBox.appendChild(clearBtn);
+
+  suggestionsBox.style.display = "block";
+}
+
+
+searchInput.addEventListener("focus", () => {
+  renderSuggestions(getHistory());
 });
 
+searchInput.addEventListener("input", () => {
+  const value = searchInput.value.toLowerCase();
+  const history = getHistory();
 
-searchInput.addEventListener("keydown", function (e) {
+  const filtered = history.filter(item =>
+    item.toLowerCase().includes(value)
+  );
+
+  renderSuggestions(filtered);
+});
+
+searchInput.addEventListener("keydown", (e) => {
   const items = suggestionsBox.querySelectorAll("li");
 
   if (e.key === "ArrowDown") {
@@ -67,7 +93,6 @@ searchInput.addEventListener("keydown", function (e) {
   if (e.key === "Enter" && selectedIndex >= 0) {
     e.preventDefault();
     searchInput.value = items[selectedIndex].textContent;
-    suggestionsBox.style.display = "none";
     handleSearch();
   }
 });
@@ -83,39 +108,48 @@ function updateActive(items) {
   }
 }
 
+function showLoading() {
+  document.body.classList.add("loading");
+}
+
 
 function handleSearch(lucky = false) {
   const query = searchInput.value.trim();
-
   if (query === "") return;
 
-  if (query.startsWith("http://") || query.startsWith("https://")) {
-    window.location.href = query;
-    return;
-  }
+  saveToHistory(query);
+  showLoading();
 
-  if (query.includes(".") && !query.includes(" ")) {
-    window.location.href = "https://" + query;
-    return;
-  }
+  setTimeout(() => {
+    if (query.startsWith("http://") || query.startsWith("https://")) {
+      window.location.href = query;
+      return;
+    }
 
-  let url = "https://www.google.com/search?q=" + encodeURIComponent(query);
-  if (lucky) url += "&btnI=I";
+    if (query.includes(".") && !query.includes(" ")) {
+      window.location.href = "https://" + query;
+      return;
+    }
 
-  window.location.href = url;
+    let url = "https://www.google.com/search?q=" + encodeURIComponent(query);
+    if (lucky) url += "&btnI=I";
+
+    window.location.href = url;
+  }, 500);
 }
 
-form.addEventListener("submit", function (e) {
+form.addEventListener("submit", (e) => {
   e.preventDefault();
   handleSearch(false);
 });
 
-luckyButton.addEventListener("click", function () {
+luckyButton.addEventListener("click", () => {
   handleSearch(true);
 });
 
 // Dark Mode
-window.addEventListener("load", function () {
+
+window.addEventListener("load", () => {
   const savedTheme = localStorage.getItem("theme");
   if (savedTheme === "dark") {
     document.body.classList.add("dark");
@@ -123,7 +157,7 @@ window.addEventListener("load", function () {
   }
 });
 
-themeToggle.addEventListener("click", function () {
+themeToggle.addEventListener("click", () => {
   document.body.classList.toggle("dark");
 
   if (document.body.classList.contains("dark")) {

@@ -184,3 +184,20 @@ body.dark #suggestions li:hover,
 body.dark #suggestions li.active {
   background-color: #3c4043;
 }
+body.loading main {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+
+main img {
+  transition: transform 0.3s ease;
+}
+
+main img:hover {
+  transform: scale(1.05) rotate(-2deg);
+}
+
+#suggestions li.active {
+  background-color: #e8f0fe;
+}

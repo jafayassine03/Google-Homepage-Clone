@@ -25,17 +25,15 @@
       alt="Google Logo">
 
     <form id="searchForm" autocomplete="off">
-      <div class="search-container">
-        <input 
-          type="text" 
-          id="searchInput"
-          name="q"
-          placeholder="Search Google or type a URL"
-          autofocus
-          aria-label="Search">
-        
-        <ul id="suggestions"></ul>
-      </div>
+      <input 
+        type="text" 
+        id="searchInput"
+        name="q"
+        placeholder="Search Google or type a URL"
+        autofocus
+        aria-label="Search">
+      
+      <div id="searchHistory" class="history-box"></div>
 
       <div class="buttons">
         <button type="submit">Google Search</button>

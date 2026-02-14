@@ -89,5 +89,4 @@ Free to use, modify, and explore
 License
 
 Totally free to use! Play around with it and make it your own 😄
-🛠️ Technologies Used
 

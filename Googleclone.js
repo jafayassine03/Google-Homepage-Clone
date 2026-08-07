@@ -4,7 +4,6 @@ const luckyButton = document.getElementById("luckyBtn");
 const themeToggle = document.getElementById("themeToggle");
 const historyBox = document.getElementById("searchHistory");
 
-// Dark Mode
 if (localStorage.getItem("theme") === "dark") {
   document.body.classList.add("dark");
   themeToggle.textContent = "☀️";
@@ -21,7 +20,6 @@ themeToggle.addEventListener("click", () => {
   }
 });
 
-// search histo
 function getHistory() {
   return JSON.parse(localStorage.getItem("searches")) || [];
 }
@@ -35,15 +33,38 @@ function saveSearch(query) {
   localStorage.setItem("searches", JSON.stringify(history));
 }
 
+function removeHistoryItem(itemToRemove, event) {
+  event.stopPropagation();
+  let history = getHistory();
+  history = history.filter(item => item !== itemToRemove);
+  localStorage.setItem("searches", JSON.stringify(history));
+  renderHistory(history);
+}
+
 function renderHistory(list) {
   historyBox.innerHTML = "";
   list.forEach(item => {
     const div = document.createElement("div");
-    div.textContent = item;
     div.classList.add("history-item");
+
+    const textSpan = document.createElement("span");
+    textSpan.textContent = item;
+    textSpan.style.flexGrow = "1";
+    div.appendChild(textSpan);
+
+    const deleteBtn = document.createElement("span");
+    deleteBtn.textContent = "✕";
+    deleteBtn.classList.add("delete-history");
+    deleteBtn.style.marginLeft = "10px";
+    deleteBtn.style.cursor = "pointer";
+    deleteBtn.addEventListener("click", (e) => removeHistoryItem(item, e));
+    div.appendChild(deleteBtn);
+
     div.addEventListener("click", () => {
       searchInput.value = item;
+      historyBox.innerHTML = "";
     });
+
     historyBox.appendChild(div);
   });
 }
@@ -56,6 +77,11 @@ searchInput.addEventListener("input", () => {
   renderHistory(filtered);
 });
 
+document.addEventListener("click", (e) => {
+  if (!form.contains(e.target)) {
+    historyBox.innerHTML = "";
+  }
+});
 
 function handleSearch(lucky = false) {
   const query = searchInput.value.trim();
@@ -63,7 +89,6 @@ function handleSearch(lucky = false) {
 
   saveSearch(query);
 
-  // URL detect
   if (query.startsWith("http://") || query.startsWith("https://")) {
     window.location.href = query;
     return;
@@ -78,6 +103,7 @@ function handleSearch(lucky = false) {
 
   window.location.href = url;
 }
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   handleSearch(false);

@@ -3,6 +3,7 @@ const searchInput = document.getElementById("searchInput");
 const luckyButton = document.getElementById("luckyBtn");
 const themeToggle = document.getElementById("themeToggle");
 const historyBox = document.getElementById("searchHistory");
+const voiceButton = document.getElementById("voiceBtn");
 
 if (localStorage.getItem("theme") === "dark") {
   document.body.classList.add("dark");
@@ -102,6 +103,29 @@ function handleSearch(lucky = false) {
   if (lucky) url += "&btnI=I";
 
   window.location.href = url;
+}
+
+if (voiceButton) {
+  voiceButton.addEventListener("click", () => {
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SpeechRecognition) {
+      alert("Voice search is not supported in this browser.");
+      return;
+    }
+    const recognition = new SpeechRecognition();
+    recognition.lang = "en-US";
+    recognition.start();
+    
+    recognition.onresult = (event) => {
+      const speechToText = event.results[0][0].transcript;
+      searchInput.value = speechToText;
+      handleSearch(false);
+    };
+
+    recognition.onerror = () => {
+      alert("Voice recognition error occurred.");
+    };
+  });
 }
 
 form.addEventListener("submit", (e) => {

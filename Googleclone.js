@@ -4,6 +4,7 @@ const luckyButton = document.getElementById("luckyBtn");
 const themeToggle = document.getElementById("themeToggle");
 const historyBox = document.getElementById("searchHistory");
 const voiceButton = document.getElementById("voiceBtn");
+const clearHistoryButton = document.getElementById("clearHistoryBtn");
 
 if (localStorage.getItem("theme") === "dark") {
   document.body.classList.add("dark");
@@ -134,3 +135,11 @@ form.addEventListener("submit", (e) => {
 });
 
 luckyButton.addEventListener("click", () => handleSearch(true));
+
+if (clearHistoryButton) {
+  clearHistoryButton.addEventListener("click", () => {
+    localStorage.removeItem("searches");
+    historyBox.innerHTML = "";
+    alert("Search history cleared.");
+  });
+}

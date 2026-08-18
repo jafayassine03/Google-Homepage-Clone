@@ -143,3 +143,14 @@ if (clearHistoryButton) {
     alert("Search history cleared.");
   });
 }
+
+function copySearchText() {
+  const text = searchInput.value.trim();
+  if(!text){
+    alert("Nothing to copy!");
+    return;
+  }
+  navigator.clipboard.writeText(text).then(()=>{
+    alert("Copied to clipboard!");
+  });
+}

@@ -150,7 +150,4 @@ function copySearchText() {
     alert("Nothing to copy!");
     return;
   }
-  navigator.clipboard.writeText(text).then(()=>{
-    alert("Copied to clipboard!");
-  });
-}
+  navigator.clipboard.write
